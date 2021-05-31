@@ -1,2 +1,2 @@
-# backend
+# Backend
 Curexia's backend
