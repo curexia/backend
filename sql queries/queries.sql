@@ -3,6 +3,8 @@ CREATE TABLE person(id int NOT NULL DEFAULT NEXTVAL ('USER_seq') PRIMARY KEY, na
 
 CREATE TABLE disease(userid int NOT NULL, name varchar(20) NOT NULL, description varchar(100) NOT NULL, category varchar(10) NOT NULL, precaution varchar(100), symptoms varchar(100), remedies varchar(100) DEFAULT 'Consult Doctor');
 
+CREATE TABLE notification(touser int NOT NULL, fromuser int NOT NULL,type varchar(10) DEFAULT 'Request', status varchar(10) DEFAULT 'Pending', description varchar(50));
+
 
 INSERT INTO person (name,dob,address,designation,phone) VALUES('Dr. Doofenshmirtz',TO_DATE('01/01/0001', 'DD/MM/YYYY'),' 9297 Polly Parkway, Danville','Doctor',1234567890);
 INSERT INTO person (name,dob,address,designation,phone) VALUES('Perry the Platypus',TO_DATE('01/01/0001', 'DD/MM/YYYY'),' 9297 Polly Parkway, Danville','Patient',1234567890);
