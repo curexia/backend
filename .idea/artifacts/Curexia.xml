@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="Curexia">
+    <output-path>$PROJECT_DIR$/out/artifacts/Curexia</output-path>
+    <root id="archive" name="Curexia.war">
+      <element id="artifact" artifact-name="backend:war exploded" />
+    </root>
+  </artifact>
+</component>
