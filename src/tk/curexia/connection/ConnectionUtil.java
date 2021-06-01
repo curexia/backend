@@ -11,7 +11,7 @@ public class ConnectionUtil {
     public static Connection getConnection() {
         try {
             Class.forName("org.postgresql.Driver");
-            URI dbUri = new URI("postgres://fcwluqfzbhgcza:48d26e964d24d1c1c8e4f4786f4481a6aa2351b2c79bb362965613e6adfcc1a3@ec2-54-167-152-185.compute-1.amazonaws.com:5432/da1e4ll9rl661h");
+            URI dbUri = new URI("postgres://byqdsehauwxdpc:1f84c5ecde076998e9e786f4fc90b2b991276184f727b065e5045de5c6d6beb4@ec2-54-87-112-29.compute-1.amazonaws.com:5432/d8hopge0hot7ag");
 
             String username = dbUri.getUserInfo().split(":")[0];
             String password = dbUri.getUserInfo().split(":")[1];
