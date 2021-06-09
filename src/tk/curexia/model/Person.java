@@ -8,15 +8,45 @@ public class Person {
     private String dob;             // DD/MM/YYYY
     private String address;
     private String designation;
-    private int phone;
+    private long phone;
+    private String email;
+    private String password;
 
-    public Person(int id, String name, String dob, String address, String designation, int phone) {
+    public Person(int id, String name, String address, String dob, String designation, long phone, String password, String email) {
         this.id = id;
         this.name = name;
         this.dob = dob;
         this.address = address;
         this.designation = designation;
         this.phone = phone;
+        this.email = email;
+        this.password = password;
+    }
+
+    public Person(String name, String address, String dob, String designation, long phone, String password, String email) {
+        this.name = name;
+        this.dob = dob;
+        this.address = address;
+        this.designation = designation;
+        this.phone = phone;
+        this.email = email;
+        this.password = password;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public int getId() {
@@ -59,11 +89,11 @@ public class Person {
         this.designation = designation;
     }
 
-    public int getPhone() {
+    public long getPhone() {
         return phone;
     }
 
-    public void setPhone(int phone) {
+    public void setPhone(long phone) {
         this.phone = phone;
     }
 
@@ -73,12 +103,12 @@ public class Person {
         if (o == null || getClass() != o.getClass()) return false;
         Person person = (Person) o;
         return id == person.id &&
-                name.equals(person.name);
+                email.equals(person.email);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name);
+        return Objects.hash(id, email);
     }
 
     @Override
@@ -90,6 +120,8 @@ public class Person {
                 ", address='" + address + '\'' +
                 ", designation='" + designation + '\'' +
                 ", phone=" + phone +
+                ", email='" + email + '\'' +
+                ", password='" + password + '\'' +
                 '}';
     }
 }
