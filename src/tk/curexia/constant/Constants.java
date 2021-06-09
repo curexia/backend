@@ -9,10 +9,10 @@ public class Constants {
 
     static void initUris(){
         doctorUris = new ArrayList<>();
-        doctorUris.add("/user/doctor");
+        doctorUris.add("/user/info");
 
         patientUris = new ArrayList<>();
-        patientUris.add("/user/patient");
+        patientUris.add("/user/info");
     }
 
     public static boolean checkUri(String uri, String position){

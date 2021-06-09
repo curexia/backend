@@ -19,12 +19,10 @@ public class LoginServlet extends HttpServlet {
 
         HttpSession session = request.getSession();
 
-        System.out.println("In LoginServlet: " + email + " : " + password);
-
         if(UserDAO.checkLogin(email,password)){
             int id = UserDAO.getID(email);
             session.setAttribute("id",id);
-            response.sendRedirect("/user/info");
+            response.sendRedirect("/user/profile");
         }else{
             RequestDispatcher rd = request.getRequestDispatcher("views/login.jsp");
             request.setAttribute("process","fail");

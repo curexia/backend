@@ -26,7 +26,7 @@ public class SignupServlet extends HttpServlet {
 
         Person p = new Person(name,address,dob,designation,phone,password,email);
 
-        if(UserDAO.createEmp(p)){
+        if(UserDAO.createPerson(p)){
             response.sendRedirect("/login");
         }else {
             RequestDispatcher rd = request.getRequestDispatcher("views/signup.jsp");

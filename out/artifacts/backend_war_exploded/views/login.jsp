@@ -12,8 +12,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Gilda+Display&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Gilda+Display&display=swap" rel="stylesheet">
     <!-- Custom styles for this template -->
-    <link href="css/login.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
+    <link href="../css/login.css" rel="stylesheet">
+    <link href="../css/style.css" rel="stylesheet">
 
     <style>
         .navbar-brand img {

@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
-@WebFilter("/temp")
+@WebFilter("/user/*")
 public class LoginFilter implements Filter {
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
@@ -18,12 +18,12 @@ public class LoginFilter implements Filter {
         HttpServletResponse response = (HttpServletResponse) resp;
         HttpSession session = request.getSession(false);
 
-        boolean loggedIn = session != null && session.getAttribute("user") != null;
+        boolean loggedIn = session != null && session.getAttribute("id") != null;
         boolean logginUrl = request.getRequestURI().equals(request.getContextPath() + "/login");
         boolean baseUrl = request.getRequestURI().equals(request.getContextPath() + "/");
 
         if (loggedIn && (logginUrl || baseUrl)) {
-            response.sendRedirect(request.getContextPath() + "/home");
+            response.sendRedirect(request.getContextPath() + "/user/profile");
         } else if (loggedIn || logginUrl) {
             chain.doFilter(req, resp);
         } else if (baseUrl) {

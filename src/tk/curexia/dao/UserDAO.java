@@ -11,7 +11,7 @@ public class UserDAO {
 
     static Connection conn;
 
-    public static boolean createEmp(Person p) {
+    public static boolean createPerson(Person p) {
         if (conn == null) {
             conn = ConnectionUtil.getConnection();
         }
@@ -79,5 +79,45 @@ public class UserDAO {
             e.printStackTrace();
             return false;
         }
+    }
+
+    public static Person getPerson(int id){
+        Person p = null;
+        if(conn == null){
+            conn = ConnectionUtil.getConnection();
+        }
+        try {
+            PreparedStatement ps = conn.prepareStatement("select * from person where id=?");
+            ps.setInt(1,id);
+            ResultSet rs = ps.executeQuery();
+            while(rs.next()){
+                p = new Person(rs.getInt(1),rs.getString(2),rs.getString(3),
+                        rs.getString(4),rs.getString(5),rs.getInt(6),rs.getString(7),rs.getString(8));
+            }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        return p;
+    }
+
+    public static String getName(int id) {
+        if(conn == null){
+            conn = ConnectionUtil.getConnection();
+        }
+        Person p = null;
+        String name = "";
+        try {
+            PreparedStatement ps = conn.prepareStatement("select * from person where id=?");
+            ps.setInt(1,id);
+            ResultSet rs = ps.executeQuery();
+            while(rs.next()){
+                p = new Person(rs.getInt(1),rs.getString(2),rs.getString(3),
+                        rs.getDate(4).toString(),rs.getString(5),rs.getLong(6),rs.getString(6),rs.getString(7));
+            }
+            name = p.getName();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        return name;
     }
 }

@@ -13,7 +13,7 @@
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#"><img src="img/logo.png"></a>
+        <a class="navbar-brand" href="/"><img src="../img/logo.png"></a>
         <a class="navbar-brand brand-name" href="/">CUREXIA</a>
 
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -36,18 +36,33 @@
                     <a class="nav-link" style="border-radius: 10px" href="/symptomchecker">Symptoms</a>
                 </li>
 
+
                 <!-- Login sign up -->
                 <li class="nav-item dropdown" >
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                        data-bs-toggle="dropdown" aria-expanded="false" style="border-radius: 10px">
-                        <img src="img/acc.png" width="35px">
+                        <img src="../img/acc.png" width="35px">
                     </a>
-                    <ul class="dropdown-menu dropdown-menu-end text-right" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="/login">Login</a></li>
-                        <li><a class="dropdown-item" href="/signup">Sign up</a></li>
+                    <%
+                        if(session.getAttribute("id") == null){
+                    %>
+                        <ul class="dropdown-menu dropdown-menu-end text-right" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="/login">Login</a></li>
+                            <li><a class="dropdown-item" href="/signup">Sign up</a></li>
 
-                    </ul>
-
+                        </ul>
+                    <%
+                        }else{
+                    %>
+                        <ul class="dropdown-menu dropdown-menu-end text-right" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="/user/profile">Profile</a></li>
+                            <li><a class="dropdown-item" href="/user/notification">Requests</a></li>
+                            <li><a class="dropdown-item" href="/user/search">Search Dr.</a></li>
+                            <li><a class="dropdown-item" href="/logout">Logout</a></li>
+                        </ul>
+                    <%
+                        }
+                    %>
                 </li>
                 <!-- <li class="nav-item">
                     <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
