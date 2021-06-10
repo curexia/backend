@@ -11,6 +11,9 @@
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Gilda+Display&display=swap" rel="stylesheet">
         <link href="../css/style.css" rel="stylesheet">
+        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="jsscript/ajax.js"></script>
+
 
     <style>
         .navbar-brand img {
@@ -41,11 +44,13 @@
             Search and learn more about your current medication:
         </h1>
         <form class="d-flex">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success" type="submit">Search</button>
+            <input class="form-control me-2" type="search" id="medsearch" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="button" onclick="ajaxreq()">Search</button>
         </form>
     </div>
+    <div id = "details">
 
+    </div>
 
     <!-- Main body ends here -->
 
@@ -59,6 +64,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
         crossorigin="anonymous"></script>
+
 </body>
 
 </html>
