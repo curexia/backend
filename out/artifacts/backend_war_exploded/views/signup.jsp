@@ -41,6 +41,17 @@
             box-sizing: border-box;
         }
 
+        input[type=date],
+        select {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
         input[type=email],
         select {
             width: 100%;
@@ -123,13 +134,13 @@
     <div>
         <form action="/signup" method="post">
             <label for="name">Name</label>
-            <input type="text" id="name" name="name" placeholder="Your name..">
+            <input type="text" id="name" name="name" placeholder="Your name.." required>
 
             <label for="email">Email</label>
-            <input type="email" id="email" name="email" placeholder="Your Email Address..">
+            <input type="email" id="email" name="email" placeholder="Your Email Address.." required>
 
             <label for="pwd">Password:</label>
-            <input type="password" id="pwd" placeholder="Enter password" name="pwd">
+            <input type="password" id="pwd" placeholder="Enter password" name="pwd" required>
 
             <label for="designation">Designation</label>
             <select id="designation" name="designation">
@@ -138,13 +149,13 @@
             </select>
 
             <label for="address">Address</label>
-            <input type="text" id="address" name="address" placeholder="Your Address..">
+            <input type="text" id="address" name="address" placeholder="Your Address.." required>
 
             <label for="dob">Date of Birth</label>
-            <input type="text" id="dob" name="dob" placeholder="DD/MM/YYYY">
+            <input type="date" id="dob" name="dob" placeholder="DD-MM-YYYY" required>
 
             <label for="phone">Phone</label>
-            <input type="text" id="phone" name="phone" placeholder="Your Phone Number..">
+            <input type="text" id="phone" name="phone" placeholder="Your Phone Number.." max="9999999999" required>
 
             <input type="submit" value="Submit">
         </form>

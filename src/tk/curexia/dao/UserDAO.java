@@ -16,7 +16,7 @@ public class UserDAO {
             conn = ConnectionUtil.getConnection();
         }
         boolean res = false;
-        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
         java.util.Date parsed = null;
         try {
             parsed = sdf.parse(p.getDob());
@@ -92,7 +92,7 @@ public class UserDAO {
             ResultSet rs = ps.executeQuery();
             while(rs.next()){
                 p = new Person(rs.getInt(1),rs.getString(2),rs.getString(3),
-                        rs.getString(4),rs.getString(5),rs.getInt(6),rs.getString(7),rs.getString(8));
+                        rs.getString(4),rs.getString(5),rs.getLong(6),rs.getString(7),rs.getString(8));
             }
         } catch (SQLException throwables) {
             throwables.printStackTrace();

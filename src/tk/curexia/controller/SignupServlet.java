@@ -21,9 +21,16 @@ public class SignupServlet extends HttpServlet {
         String designation = request.getParameter("designation");
         String address = request.getParameter("address");
         String dob = request.getParameter("dob");
-        long phone = Long.parseLong(request.getParameter("phone"));
-        HttpSession session = request.getSession();
-
+        long phone = 0;
+        try {
+            phone = Long.parseLong(request.getParameter("phone"));
+        }catch(Exception e){
+            RequestDispatcher rd = request.getRequestDispatcher("views/signup.jsp");
+            request.setAttribute("process","fail");
+            request.setAttribute("getOrPost","post");
+            rd.forward(request,response);
+            return;
+        }
         Person p = new Person(name,address,dob,designation,phone,password,email);
 
         if(UserDAO.createPerson(p)){

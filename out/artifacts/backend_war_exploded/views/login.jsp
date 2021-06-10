@@ -65,11 +65,11 @@
         <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
 
         <div class="form-floating">
-            <input type="email" class="form-control" name="email" id="email" placeholder="name@example.com">
+            <input type="email" class="form-control" name="email" id="email" placeholder="name@example.com" required>
             <label for="email">Email address</label>
         </div>
         <div class="form-floating">
-            <input type="password" class="form-control" name="pwd" id="pwd" placeholder="Password">
+            <input type="password" class="form-control" name="pwd" id="pwd" placeholder="Password" required>
             <label for="pwd">Password</label>
         </div>
         <input class="w-100 btn btn-lg btn-primary" type="submit" value="Sign in">
