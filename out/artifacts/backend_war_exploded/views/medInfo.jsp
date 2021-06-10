@@ -43,14 +43,17 @@
         <h1>
             Search and learn more about your current medication:
         </h1>
-        <form class="d-flex">
+<%--        <form class="d-flex">--%>
             <input class="form-control me-2" type="search" id="medsearch" placeholder="Search" aria-label="Search">
             <button class="btn btn-outline-success" type="button" onclick="ajaxreq()">Search</button>
-        </form>
+<%--        </form>--%>
+        <div id = "details">
+            <h3>Medicine details</h3>
+        </div>
     </div>
-    <div id = "details">
 
-    </div>
+
+    
 
     <!-- Main body ends here -->
 
