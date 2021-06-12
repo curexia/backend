@@ -1,9 +1,3 @@
-<%@ page import="tk.curexia.model.Person" %>
-<%@ page import="tk.curexia.model.Disease" %>
-<%@ page import="java.util.ArrayList" %>
-<%@ page import="tk.curexia.model.Notification" %>
-<%@ page import="tk.curexia.dao.NotiDAO" %>
-<%@ page import="tk.curexia.dao.UserDAO" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html lang="en">
 
@@ -17,31 +11,40 @@
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Gilda+Display&display=swap" rel="stylesheet">
     <link href="../css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/diseaseinfo.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="../jsscript/ajax.js"></script>
 
     <style>
         .navbar-brand img {
             width: 75px;
         }
-
-        .body {
+        .body{
             font-family: 'Nunito', sans-serif;
         }
+        .med-search{
+            width: 50%;
+            padding-top: 56px;
+            padding-bottom: 160px;
+        }
     </style>
-    <title>Disease | Curexia</title>
+    <title>Diseases | Curexia</title>
 </head>
 
 <body>
 <jsp:include page="../stills/nav.jsp"/>
-<jsp:include page="../stills/usernav.jsp"/>
 
-<div class="container">
-    <%
-        int id = (Integer) session.getAttribute("id");
-    %>
-    <h2>Search Disease</h2>
+        <div class="container-fluid med-search">
+            <h1>
+                Enter the disease you want to search:
+            </h1><br>
+            <div class="d-flex">
+                <input class="form-control me-2" id="diseaseInfo" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success" type="button" onclick="diseaseInfo()">Search</button>
+            </div>
+            <div id = "disInfo"></div>
+        </div>
 
-</div>
-<!-- Main body ends here -->
 <hr class="featurette-divider">
 
 <!-- Footer starts here -->

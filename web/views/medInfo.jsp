@@ -46,7 +46,7 @@
             md = (Medicine) request.getAttribute("medicine");
     %>
             <div class="container-fluid med-search">
-                <h1><%=md.getName()%></h1>
+                <h1 class="widget-title"><%=md.getName()%></h1>
                 <p><%=md.getProducer()%></p>
                 <p><%=md.getStorage()%></p>
 

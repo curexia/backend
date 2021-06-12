@@ -8,6 +8,42 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
+    <style>
+        .navbar-brand img {
+            width: 104px;
+        }
+
+        .body {
+            font-family: 'Nunito', sans-serif;
+        }
+
+        .container-fluid.jumbotron {
+            margin: 2px;
+            padding: 10px;
+            border: black;
+            background-color: #effaff;
+        }
+
+        .carousel-inner img {
+            position: absolute centre;
+            margin: auto;
+            width: 100%;
+            height: 32rem;
+        }
+
+        .consultation_home_card {
+            margin-bottom: 3rem;
+        }
+
+        .consultation_home_card span {
+            margin: auto;
+        }
+
+        .salah_btn {
+            position: absolute centre;
+            margin-bottom: 3rem;
+        }
+    </style>
     <title></title>
 </head>
 <body>
@@ -26,11 +62,14 @@
                 <li class="nav-item" >
                     <a class="nav-link" style="border-radius: 10px" href="/">Home</a>
                 </li>
+                <li class="nav-item" >
+                    <a class="nav-link" style="border-radius: 10px" href="/news">News</a>
+                </li>
                 <li class="nav-item">
                     <a class="nav-link" style="border-radius: 10px" href="/medicine/search">Medicines</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" style="border-radius: 10px" href="/disease/search">Diseases</a>
+                    <a class="nav-link" style="border-radius: 10px" href="/disease">Diseases</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" style="border-radius: 10px" href="/symptomchecker">Symptoms</a>
@@ -64,14 +103,7 @@
                         }
                     %>
                 </li>
-                <!-- <li class="nav-item">
-                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-                </li> -->
             </ul>
-            <!-- <form class="d-flex">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success" type="submit">Search</button>
-            </form> -->
         </div>
     </div>
 </nav><!--Main body starts here-->

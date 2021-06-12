@@ -41,11 +41,11 @@
         <div class="container-fluid med-search">
             <h1>
                 Search and learn more about your current medication:
-            </h1>
-            <%--        <form class="d-flex">--%>
-            <input class="form-control me-2" type="search" id="medsearch" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success" type="button" onclick="ajaxreq()">Search</button>
-            <%--        </form>--%>
+            </h1><br />
+            <div class="d-flex">
+                <input class="form-control me-2" type="search" id="medsearch" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success" type="button" onclick="ajaxreq()">Search</button>
+            </div>
             <div id = "details"></div>
         </div>
     <!-- Main body ends here -->

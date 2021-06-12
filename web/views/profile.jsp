@@ -1,5 +1,5 @@
-<%@ page import="tk.curexia.model.Person" %>
 <%@ page import="tk.curexia.model.Disease" %>
+<%@ page import="tk.curexia.model.Person" %>
 <%@ page import="java.util.ArrayList" %>
 <!doctype html>
 <html lang="en">

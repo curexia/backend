@@ -2,7 +2,6 @@ package tk.curexia.dao;
 
 import tk.curexia.connection.ConnectionUtil;
 import tk.curexia.model.Disease;
-import tk.curexia.model.Person;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

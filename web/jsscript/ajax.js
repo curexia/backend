@@ -38,22 +38,37 @@ function ajaxreq()
 
 function diseaseInfo()
 {
- let data = ("#diseaseInfo").val();
+ let data = $("#diseaseInfo").val();
     $.ajax({
         type: "POST",
-        url: "https://adimdsearch.herokuapp.com/api/disease?name=" + data,
+        url: "/disease?name=" + data,
         dataType: "text json",
         contentType: "application/json",
         cache: false,
         timeout: 600000,
         success: function (result) {
-            var p = $("<br /><h2>Disease Information</h2><br/>");
+            var p = $("<br /><h2>"+result["result"]["name"]+"</h2><br/>");
             Object.keys(result["result"]["details"]).forEach(function(key) {
-                p.append("<br><div class='container2'>"+"<div>"+key+":"+ result["result"]["details"][key]+"</div>");
+                if(key.localeCompare("Definition")===0){
+                    p.append("" +
+                        "<br/>" +
+                        "<div class='container2'>" +
+                        "<div style='white-space: pre-line;font-size: .6em'>" + result["result"]["details"][key]+"</div>" +
+                        "</div>");
                 }
+            })
+            Object.keys(result["result"]["details"]).forEach(function(key) {
+                if(key.localeCompare("Definition")===0){
+                }else{
+                    p.append("" +
+                        "<div class='container2'>" +
+                            "<div> <h4>"+ key +"</h4></div>" +
+                            "<div style='white-space: pre-line;font-size: .6em'>" + result["result"]["details"][key]+"</div>" +
+                        "</div>");
+                }
+            })
             $("#disInfo").html(p);
-            },
-
+        },
         error: function (xhr, status, error) {
             alert("Result: " + status + " " + error + " " + xhr.status + " " + xhr.statusText)
         }

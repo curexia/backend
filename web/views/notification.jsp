@@ -1,9 +1,6 @@
-<%@ page import="tk.curexia.model.Person" %>
-<%@ page import="tk.curexia.model.Disease" %>
-<%@ page import="java.util.ArrayList" %>
-<%@ page import="tk.curexia.model.Notification" %>
-<%@ page import="tk.curexia.dao.NotiDAO" %>
 <%@ page import="tk.curexia.dao.UserDAO" %>
+<%@ page import="tk.curexia.model.Notification" %>
+<%@ page import="java.util.ArrayList" %>
 <!doctype html>
 <html lang="en">
 

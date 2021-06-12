@@ -32,10 +32,14 @@
                                 <div class="thumb-content"><a href="/">Home</a></div>
                             </li>
                             <li>
-                                <div class="thumb-content"><a href="/medicine/search">Medicine Search</a></div>
+                                <div class="thumb-content"><a href="/news">News</a></div>
                             </li>
                             <li>
-                                <div class="thumb-content"><a href="/disease/search">Disease Search</a></div>
+                                <div class="thumb-content"><a href="/medicine/search">Medicine Search</a></div>
+                            </li>
+
+                            <li>
+                                <div class="thumb-content"><a href="/disease">Disease Search</a></div>
                             </li>
                             <li>
                                 <div class="thumb-content"><a href="/symptomchecker">Symptoms Checker</a></div>
@@ -64,16 +68,6 @@
             </div>
         </div>
     </div>
-
-    <!-- <div class="footer-copyright">
-          <div class="container">
-              <div class="row">
-                  <div class="col-md-12 text-center">
-                      <p>Copyright Company Name © 2016. All rights reserved.</p>
-                  </div>
-              </div>
-          </div>
-      </div> -->
 </footer>
 
 </body>
