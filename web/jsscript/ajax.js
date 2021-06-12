@@ -34,3 +34,28 @@ function ajaxreq()
 
 
 }
+
+
+function diseaseInfo()
+{
+ let data = ("#diseaseInfo").val();
+    $.ajax({
+        type: "POST",
+        url: "https://adimdsearch.herokuapp.com/api/disease?name=" + data,
+        dataType: "text json",
+        contentType: "application/json",
+        cache: false,
+        timeout: 600000,
+        success: function (result) {
+            var p = $("<br /><h2>Disease Information</h2><br/>");
+            Object.keys(result["result"]["details"]).forEach(function(key) {
+                p.append("<br><div class='container2'>"+"<div>"+key+":"+ result["result"]["details"][key]+"</div>");
+                }
+            $("#disInfo").html(p);
+            },
+
+        error: function (xhr, status, error) {
+            alert("Result: " + status + " " + error + " " + xhr.status + " " + xhr.statusText)
+        }
+    });
+}

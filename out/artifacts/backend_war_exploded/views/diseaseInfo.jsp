@@ -12,6 +12,8 @@
         <link href="https://fonts.googleapis.com/css2?family=Gilda+Display&display=swap" rel="stylesheet">
         <link href="../css/style.css" rel="stylesheet">
         <link rel="stylesheet" href="../css/diseaseinfo.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="../jsscript/ajax.js"></script>
 
     <style>
         .navbar-brand img {
@@ -25,48 +27,58 @@
 </head>
 
 <body>
-    <jsp:include page="../stills/nav.jsp"/>
-    <div class="row row-1">
-      <div class="col-sm-6">
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title">Lorem Ipsum -----</h5>
-            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-            <a href="#" class="btn btn-primary">Disease 1</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-6">
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title">Lorem Ipsum -----</h5>
-            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-            <a href="#" class="btn btn-primary">Disease 2</a>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="row row-2">
-        <div class="col-sm-6">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Lorem Ipsum -----</h5>
-              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-              <a href="#" class="btn btn-primary">Disease 3</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-6">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Lorem Ipsum -----</h5>
-              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-              <a href="#" class="btn btn-primary">Disease 4</a>
-            </div>
-          </div>
-        </div>
-      </div>
+<%--    <jsp:include page="../stills/nav.jsp"/>--%>
+<%--    <div class="row row-1">--%>
+<%--      <div class="col-sm-6">--%>
+<%--        <div class="card">--%>
+<%--          <div class="card-body">--%>
+<%--            <h5 class="card-title">Lorem Ipsum -----</h5>--%>
+<%--            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>--%>
+<%--            <a href="#" class="btn btn-primary">Disease 1</a>--%>
+<%--          </div>--%>
+<%--        </div>--%>
+<%--      </div>--%>
+<%--      <div class="col-sm-6">--%>
+<%--        <div class="card">--%>
+<%--          <div class="card-body">--%>
+<%--            <h5 class="card-title">Lorem Ipsum -----</h5>--%>
+<%--            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>--%>
+<%--            <a href="#" class="btn btn-primary">Disease 2</a>--%>
+<%--          </div>--%>
+<%--        </div>--%>
+<%--      </div>--%>
+<%--    </div>--%>
+<%--    <div class="row row-2">--%>
+<%--        <div class="col-sm-6">--%>
+<%--          <div class="card">--%>
+<%--            <div class="card-body">--%>
+<%--              <h5 class="card-title">Lorem Ipsum -----</h5>--%>
+<%--              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>--%>
+<%--              <a href="#" class="btn btn-primary">Disease 3</a>--%>
+<%--            </div>--%>
+<%--          </div>--%>
+<%--        </div>--%>
+<%--        <div class="col-sm-6">--%>
+<%--          <div class="card">--%>
+<%--            <div class="card-body">--%>
+<%--              <h5 class="card-title">Lorem Ipsum -----</h5>--%>
+<%--              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>--%>
+<%--              <a href="#" class="btn btn-primary">Disease 4</a>--%>
+<%--            </div>--%>
+<%--          </div>--%>
+<%--        </div>--%>
+<%--      </div>--%>
     <!--Main body ends here-->
+    <div class="container-fluid med-search">
+        <h1>
+            Enter the disease you want to seach:
+        </h1>
+<%--        <form class="d-flex">--%>
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="button" onclick="diseaseInfo()">Search</button>
+<%--        </form>--%>
+        <div id = "disInfo"></div>
+    </div>
 
     <hr class="featurette-divider">
 
