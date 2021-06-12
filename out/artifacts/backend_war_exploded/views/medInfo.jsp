@@ -25,7 +25,7 @@
             font-family: 'Nunito', sans-serif;
         }
         .med-search{
-            width: 50%;
+            width: 85%;
             padding-top: 56px;
             padding-bottom: 160px;
         }
