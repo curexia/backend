@@ -93,7 +93,7 @@
             border-radius: 5px;
             background-color: #f2f2f2;
             padding: 20px;
-            width: 50%;
+            width: 85%;
         }
 
         .form-signup img {
