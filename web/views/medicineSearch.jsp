@@ -39,7 +39,7 @@
 <!---Main body starts here--->
 
         <div class="container-fluid med-search">
-            <h1>
+            <h1 style="color:darkcyan;">
                 Search and learn more about your current medication:
             </h1><br />
             <div class="d-flex">

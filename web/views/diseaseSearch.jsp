@@ -35,7 +35,7 @@
 <jsp:include page="../stills/nav.jsp"/>
 
         <div class="container-fluid med-search">
-            <h1>
+            <h1 style="color:darkcyan;">
                 Enter the disease you want to search:
             </h1><br>
             <div class="d-flex">
