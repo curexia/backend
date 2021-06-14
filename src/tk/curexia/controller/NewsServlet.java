@@ -19,28 +19,16 @@ import java.util.ArrayList;
 public class NewsServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         doGet(request,response);
-
-        ServletContext ctxt = super.getServletContext();
-        StringBuilder sb = (StringBuilder)ctxt.getAttribute("newsResponse");
-
-        HttpSession sess = request.getSession();
-        //add session tracking accordingly
-        sess.setAttribute("newsResponse",sb.toString());
-        RequestDispatcher rd = request.getRequestDispatcher("/views/news.jsp");
-        rd.forward(request,response);
-        //Make jsp according to the response given by the news api
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//        HttpSession session = request.getSession();
-//        if(session.getAttribute("news")==null){
-//            ArrayList<News> news = NewsDAO.getNews();
-//            session.setAttribute("news",news);
-//        }
-//        String url = "/views/news.jsp";
-//        RequestDispatcher rd = request.getRequestDispatcher(url);
-//        rd.forward(request,response);
-
-
+        HttpSession session = request.getSession();
+        if(session.getAttribute("news")==null){
+            ArrayList<News> news = NewsDAO.getNews();
+            session.setAttribute("news",news);
+        }
+        String url = "/views/news.jsp";
+        RequestDispatcher rd = request.getRequestDispatcher(url);
+        rd.forward(request,response);
     }
 }
