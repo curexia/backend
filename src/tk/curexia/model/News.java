@@ -2,19 +2,15 @@ package tk.curexia.model;
 
 public class News {
     private String title;
-    private String author;
     private String url;
     private String urltoimage;
     private String description;
-    private String content;
 
-    public News(String title, String author, String url, String urltoimage, String description, String content) {
+    public News(String title, String url, String urltoimage, String description) {
         this.title = title;
-        this.author = author;
         this.url = url;
         this.urltoimage = urltoimage;
         this.description = description;
-        this.content = content;
     }
 
     public String getTitle() {
@@ -23,14 +19,6 @@ public class News {
 
     public void setTitle(String title) {
         this.title = title;
-    }
-
-    public String getAuthor() {
-        return author;
-    }
-
-    public void setAuthor(String author) {
-        this.author = author;
     }
 
     public String getUrl() {
@@ -57,23 +45,13 @@ public class News {
         this.description = description;
     }
 
-    public String getContent() {
-        return content;
-    }
-
-    public void setContent(String content) {
-        this.content = content;
-    }
-
     @Override
     public String toString() {
         return "News{" +
                 "title='" + title + '\'' +
-                ", author='" + author + '\'' +
                 ", url='" + url + '\'' +
                 ", urltoimage='" + urltoimage + '\'' +
                 ", description='" + description + '\'' +
-                ", content='" + content + '\'' +
                 '}';
     }
 }

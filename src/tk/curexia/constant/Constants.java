@@ -40,4 +40,8 @@ public class Constants {
     }
 
     public static String getUserAgent(){return USER_AGENT;};
+
+    public static String getApikey() {
+        return "83082a779ad241598e3c1a97807293ac";
+    }
 }
