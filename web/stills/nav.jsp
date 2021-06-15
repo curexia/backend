@@ -47,7 +47,7 @@
     <title></title>
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="top: 0px">
     <div class="container-fluid">
         <a class="navbar-brand" href="/"><img src="../img/logo.png"></a>
         <a class="navbar-brand brand-name" href="/">CUREXIA</a>
