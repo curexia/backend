@@ -14,7 +14,6 @@
     <!-- Custom styles for this template -->
     <link href="../css/style.css" rel="stylesheet">
     <link href="../css/style.css" rel="stylesheet">
-
     <style>
         .navbar-brand img {
             width: 75px;
@@ -109,6 +108,7 @@
     </style>
     <title>Sign up | <%=Constants.AppName()%>
     </title>
+    <jsp:include page="../stills/head.jsp"/>
 </head>
 
 <body>
@@ -118,17 +118,17 @@
 
 <body class="text-center">
 
-    <%
-        String getOrPost = (String) request.getAttribute("getOrPost");
-        if (getOrPost.equalsIgnoreCase("post")) {
-            String res = (String) request.getAttribute("process");
-            if (res.equalsIgnoreCase("fail")) {
-    %>
-        <p class="mt-5 mb-3 text-muted caption-login"> Sign up failed! Try again with different details.</p>
-    <%
-            }
+<%
+    String getOrPost = (String) request.getAttribute("getOrPost");
+    if (getOrPost.equalsIgnoreCase("post")) {
+        String res = (String) request.getAttribute("process");
+        if (res.equalsIgnoreCase("fail")) {
+%>
+<p class="mt-5 mb-3 text-muted caption-login"> Sign up failed! Try again with different details.</p>
+<%
         }
-    %>
+    }
+%>
 
 <div class="container my-signup-container">
     <div>
@@ -177,7 +177,7 @@
 
 <!-- Main body ends here -->
 <!-- Footer starts here -->
-    <jsp:include page="../stills/footer.jsp"/>
+<jsp:include page="../stills/footer.jsp"/>
 <!-- Footer ends here -->
 
 

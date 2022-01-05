@@ -8,6 +8,7 @@
         </element>
         <element id="directory" name="lib">
           <element id="file-copy" path="$PROJECT_DIR$/web/WEB-INF/lib/postgresql.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/web/WEB-INF/lib/json.jar" />
         </element>
       </element>
       <element id="javaee-facet-resources" facet="backend/web/Web" />

@@ -59,10 +59,10 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                <li class="nav-item" >
+                <li class="nav-item">
                     <a class="nav-link" style="border-radius: 10px" href="/">Home</a>
                 </li>
-                <li class="nav-item" >
+                <li class="nav-item">
                     <a class="nav-link" style="border-radius: 10px" href="/news">News</a>
                 </li>
                 <li class="nav-item">
@@ -74,31 +74,34 @@
                 <li class="nav-item">
                     <a class="nav-link" style="border-radius: 10px" href="/symptomchecker">Symptoms</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" style="border-radius: 10px" href="/riskchecker">Risk Check</a>
+                </li>
 
 
                 <!-- Login sign up -->
-                <li class="nav-item dropdown" >
+                <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                        data-bs-toggle="dropdown" aria-expanded="false" style="border-radius: 10px">
                         <img src="../img/acc.png" width="35px">
                     </a>
                     <%
-                        if(session.getAttribute("id") == null){
+                        if (session.getAttribute("id") == null) {
                     %>
-                        <ul class="dropdown-menu dropdown-menu-end text-right" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="/login">Login</a></li>
-                            <li><a class="dropdown-item" href="/signup">Sign up</a></li>
+                    <ul class="dropdown-menu dropdown-menu-end text-right" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="/login">Login</a></li>
+                        <li><a class="dropdown-item" href="/signup">Sign up</a></li>
 
-                        </ul>
+                    </ul>
                     <%
-                        }else{
+                    } else {
                     %>
-                        <ul class="dropdown-menu dropdown-menu-end text-right" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="/user/profile">Profile</a></li>
-                            <li><a class="dropdown-item" href="/user/notification">Requests</a></li>
-                            <li><a class="dropdown-item" href="/user/search">Search Dr.</a></li>
-                            <li><a class="dropdown-item" href="/logout">Logout</a></li>
-                        </ul>
+                    <ul class="dropdown-menu dropdown-menu-end text-right" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="/user/profile">Profile</a></li>
+                        <li><a class="dropdown-item" href="/user/notification">Requests</a></li>
+                        <li><a class="dropdown-item" href="/user/search">Search Dr.</a></li>
+                        <li><a class="dropdown-item" href="/logout">Logout</a></li>
+                    </ul>
                     <%
                         }
                     %>

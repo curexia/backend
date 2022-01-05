@@ -18,12 +18,12 @@ public class DiseaseServlet extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String name = (String) request.getParameter("name");
-        URL url = new URL("https://adimdsearch.herokuapp.com/api/disease?name="+name);
-        HttpURLConnection con = (HttpURLConnection)url.openConnection();
+        URL url = new URL("https://adimdsearch.herokuapp.com/api/disease?name=" + name);
+        HttpURLConnection con = (HttpURLConnection) url.openConnection();
         con.setRequestProperty("Content-Type", "application/json; utf-8");
         StringBuilder resp = new StringBuilder();
         resp.append("");
-        try(BufferedReader br = new BufferedReader(
+        try (BufferedReader br = new BufferedReader(
                 new InputStreamReader(con.getInputStream(), "utf-8"))) {
             String responseLine = null;
             while ((responseLine = br.readLine()) != null) {
@@ -38,9 +38,9 @@ public class DiseaseServlet extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.setAttribute("getOrPost","get");
+        request.setAttribute("getOrPost", "get");
         String url = "/views/diseaseSearch.jsp";
         RequestDispatcher rd = request.getRequestDispatcher(url);
-        rd.forward(request,response);
+        rd.forward(request, response);
     }
 }

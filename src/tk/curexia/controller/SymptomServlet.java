@@ -11,12 +11,12 @@ import java.io.IOException;
 @WebServlet("/symptomchecker")
 public class SymptomServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        doGet(request,response);
+        doGet(request, response);
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.setAttribute("getOrPost","get");
+        request.setAttribute("getOrPost", "get");
         RequestDispatcher rd = request.getRequestDispatcher("views/symptomchecker.jsp");
-        rd.forward(request,response);
+        rd.forward(request, response);
     }
 }

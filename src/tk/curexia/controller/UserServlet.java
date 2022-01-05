@@ -19,9 +19,9 @@ import java.util.ArrayList;
 
 @WebServlet("/user/*")
 public class UserServlet extends HttpServlet {
-    private String reqUri(HttpServletRequest request){
+    private String reqUri(HttpServletRequest request) {
         String temp = request.getPathInfo();
-        temp = temp.replaceAll("/","");
+        temp = temp.replaceAll("/", "");
         return temp;
     }
 
@@ -36,39 +36,39 @@ public class UserServlet extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String url = reqUri(request);
-        switch(url){
+        switch (url) {
             case "search":
-                searchPost(request,response);
+                searchPost(request, response);
                 break;
             case "notification":
-                notiPost(request,response);
+                notiPost(request, response);
                 break;
             default:
-                infoPost(request,response);
+                infoPost(request, response);
         }
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession();
 
-        int id = (Integer)session.getAttribute("id");
-        if(session.getAttribute("current")==null) {
+        int id = (Integer) session.getAttribute("id");
+        if (session.getAttribute("current") == null) {
             Person current = UserDAO.getPerson(id);
             session.setAttribute("current", current);
         }
-        if(session.getAttribute("diseases")==null) {
+        if (session.getAttribute("diseases") == null) {
             ArrayList<Disease> diseases = DiseaseDAO.getDiseaseForPerson(id);
-            session.setAttribute("diseases",diseases);
+            session.setAttribute("diseases", diseases);
         }
 
-        new Thread(()->{
-                ArrayList<Notification> notis = NotiDAO.getNotificationForPerson(id);
-                session.setAttribute("notis", notis);
+        new Thread(() -> {
+            ArrayList<Notification> notis = NotiDAO.getNotificationForPerson(id);
+            session.setAttribute("notis", notis);
         }).start();
 
-        request.setAttribute("getOrPost","get");
+        request.setAttribute("getOrPost", "get");
         String url = "";
-        switch(reqUri(request)){
+        switch (reqUri(request)) {
             case "search":
                 url = "/views/userSearch.jsp";
                 break;
@@ -80,6 +80,6 @@ public class UserServlet extends HttpServlet {
                 break;
         }
         RequestDispatcher rd = request.getRequestDispatcher(url);
-        rd.forward(request,response);
+        rd.forward(request, response);
     }
 }

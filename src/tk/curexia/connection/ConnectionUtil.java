@@ -4,6 +4,7 @@ import java.net.URI;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.sql.SQLOutput;
 
 public class ConnectionUtil {
     static Connection conn;
@@ -17,7 +18,7 @@ public class ConnectionUtil {
             String password = dbUri.getUserInfo().split(":")[1];
             String dbUrl = "jdbc:postgresql://" + dbUri.getHost() + ':' + dbUri.getPort() + dbUri.getPath();
 
-            conn = DriverManager.getConnection(dbUrl,username,password);
+            conn = DriverManager.getConnection(dbUrl, username, password);
         } catch (Exception e) {
             e.printStackTrace();
         }

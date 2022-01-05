@@ -11,7 +11,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Gilda+Display&display=swap" rel="stylesheet">
     <link href="../css/style.css" rel="stylesheet">
-
     <style>
         .navbar-brand img {
             width: 75px;
@@ -22,6 +21,7 @@
         }
     </style>
     <title>Profile | Curexia</title>
+    <jsp:include page="../stills/head.jsp"/>
 </head>
 
 <body>

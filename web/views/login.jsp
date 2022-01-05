@@ -14,7 +14,7 @@
     <!-- Custom styles for this template -->
     <link href="../css/login.css" rel="stylesheet">
     <link href="../css/style.css" rel="stylesheet">
-
+    <jsp:include page="../stills/head.jsp"/>
     <style>
         .navbar-brand img {
             width: 75px;
@@ -78,14 +78,14 @@
             if (getOrPost.equalsIgnoreCase("post")) {
                 String res = (String) request.getAttribute("process");
                 if (res.equalsIgnoreCase("fail")) {
-                    %>
-                        <p class="mt-5 mb-3 text-muted caption-login"> User login failed! Try Again.</p>
-                    <%
-                }
-            }else{
-                %>
-                    <p class="mt-5 mb-3 text-muted caption-login">Your health, our priority</p>
-                <%
+        %>
+        <p class="mt-5 mb-3 text-muted caption-login"> User login failed! Try Again.</p>
+        <%
+            }
+        } else {
+        %>
+        <p class="mt-5 mb-3 text-muted caption-login">Your health, our priority</p>
+        <%
             }
         %>
     </form>

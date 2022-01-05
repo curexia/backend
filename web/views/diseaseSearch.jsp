@@ -19,10 +19,12 @@
         .navbar-brand img {
             width: 75px;
         }
-        .body{
+
+        .body {
             font-family: 'Nunito', sans-serif;
         }
-        .med-search{
+
+        .med-search {
             width: 85%;
             padding-top: 56px;
             padding-bottom: 160px;
@@ -34,16 +36,16 @@
 <body>
 <jsp:include page="../stills/nav.jsp"/>
 
-        <div class="container-fluid med-search">
-            <h1 style="color:darkcyan;">
-                Enter the disease you want to search:
-            </h1><br>
-            <div class="d-flex">
-                <input class="form-control me-2" id="diseaseInfo" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success" type="button" onclick="diseaseInfo()">Search</button>
-            </div>
-            <div id = "disInfo"></div>
-        </div>
+<div class="container-fluid med-search">
+    <h1 style="color:darkcyan;">
+        Enter the disease you want to search:
+    </h1><br>
+    <div class="d-flex">
+        <input class="form-control me-2" id="diseaseInfo" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="button" onclick="diseaseInfo()">Search</button>
+    </div>
+    <div id="disInfo"></div>
+</div>
 
 <hr class="featurette-divider">
 

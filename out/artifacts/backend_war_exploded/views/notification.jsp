@@ -14,7 +14,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Gilda+Display&display=swap" rel="stylesheet">
     <link href="../css/style.css" rel="stylesheet">
-
     <style>
         .navbar-brand img {
             width: 75px;
@@ -25,6 +24,7 @@
         }
     </style>
     <title>Profile | Curexia</title>
+    <jsp:include page="../stills/head.jsp"/>
 </head>
 
 <body>
@@ -38,26 +38,27 @@
     %>
     <h2>Notifications</h2>
     <ul>
-    <%
-        if(notis.size()==0){
-            %>
-                <p>No notifications found!</p>
-            <%
-        }
-        for (int i = 0; i < notis.size(); i++) {
-            Notification d = notis.get(i);
-            if(d.getStatus().equalsIgnoreCase("Pending")){
-            %>
-                <li>
-                    <h6><%=d.getType()%> from <%=UserDAO.getName(d.getFromuser())%></h6>
-                    <input class="btn btn-primary" type="submit" name="btn" value="Accept">
-                </li>
-    <%
+        <%
+            if (notis.size() == 0) {
+        %>
+        <p>No notifications found!</p>
+        <%
             }
-        }
-    %>
+            for (int i = 0; i < notis.size(); i++) {
+                Notification d = notis.get(i);
+                if (d.getStatus().equalsIgnoreCase("Pending")) {
+        %>
+        <li>
+            <h6><%=d.getType()%> from <%=UserDAO.getName(d.getFromuser())%>
+            </h6>
+            <input class="btn btn-primary" type="submit" name="btn" value="Accept">
+        </li>
+        <%
+                }
+            }
+        %>
     </ul>
-    <br />
+    <br/>
 </div>
 <!-- Main body ends here -->
 <hr class="featurette-divider">

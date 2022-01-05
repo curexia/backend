@@ -45,18 +45,18 @@ public class UserDAO {
     }
 
     public static int getID(String email) {
-        if(conn == null){
+        if (conn == null) {
             conn = ConnectionUtil.getConnection();
         }
         Person p = null;
         int id = 0;
         try {
             PreparedStatement ps = conn.prepareStatement("select * from person where email=?");
-            ps.setString(1,email);
+            ps.setString(1, email);
             ResultSet rs = ps.executeQuery();
-            while(rs.next()){
-                p = new Person(rs.getInt(1),rs.getString(2),rs.getString(3),
-                        rs.getDate(4).toString(),rs.getString(5),rs.getLong(6),rs.getString(6),rs.getString(7));
+            while (rs.next()) {
+                p = new Person(rs.getInt(1), rs.getString(2), rs.getString(3),
+                        rs.getDate(4).toString(), rs.getString(5), rs.getLong(6), rs.getString(6), rs.getString(7));
             }
             id = p.getId();
         } catch (SQLException throwables) {
@@ -81,18 +81,18 @@ public class UserDAO {
         }
     }
 
-    public static Person getPerson(int id){
+    public static Person getPerson(int id) {
         Person p = null;
-        if(conn == null){
+        if (conn == null) {
             conn = ConnectionUtil.getConnection();
         }
         try {
             PreparedStatement ps = conn.prepareStatement("select * from person where id=?");
-            ps.setInt(1,id);
+            ps.setInt(1, id);
             ResultSet rs = ps.executeQuery();
-            while(rs.next()){
-                p = new Person(rs.getInt(1),rs.getString(2),rs.getString(3),
-                        rs.getString(4),rs.getString(5),rs.getLong(6),rs.getString(7),rs.getString(8));
+            while (rs.next()) {
+                p = new Person(rs.getInt(1), rs.getString(2), rs.getString(3),
+                        rs.getString(4), rs.getString(5), rs.getLong(6), rs.getString(7), rs.getString(8));
             }
         } catch (SQLException throwables) {
             throwables.printStackTrace();
@@ -101,18 +101,18 @@ public class UserDAO {
     }
 
     public static String getName(int id) {
-        if(conn == null){
+        if (conn == null) {
             conn = ConnectionUtil.getConnection();
         }
         Person p = null;
         String name = "";
         try {
             PreparedStatement ps = conn.prepareStatement("select * from person where id=?");
-            ps.setInt(1,id);
+            ps.setInt(1, id);
             ResultSet rs = ps.executeQuery();
-            while(rs.next()){
-                p = new Person(rs.getInt(1),rs.getString(2),rs.getString(3),
-                        rs.getDate(4).toString(),rs.getString(5),rs.getLong(6),rs.getString(6),rs.getString(7));
+            while (rs.next()) {
+                p = new Person(rs.getInt(1), rs.getString(2), rs.getString(3),
+                        rs.getDate(4).toString(), rs.getString(5), rs.getLong(6), rs.getString(6), rs.getString(7));
             }
             name = p.getName();
         } catch (SQLException throwables) {

@@ -23,28 +23,28 @@ public class SignupServlet extends HttpServlet {
         long phone = 0;
         try {
             phone = Long.parseLong(request.getParameter("phone"));
-        }catch(Exception e){
+        } catch (Exception e) {
             RequestDispatcher rd = request.getRequestDispatcher("views/signup.jsp");
-            request.setAttribute("process","fail");
-            request.setAttribute("getOrPost","post");
-            rd.forward(request,response);
+            request.setAttribute("process", "fail");
+            request.setAttribute("getOrPost", "post");
+            rd.forward(request, response);
             return;
         }
-        Person p = new Person(name,address,dob,designation,phone,password,email);
+        Person p = new Person(name, address, dob, designation, phone, password, email);
 
-        if(UserDAO.createPerson(p)){
+        if (UserDAO.createPerson(p)) {
             response.sendRedirect("/login");
-        }else {
+        } else {
             RequestDispatcher rd = request.getRequestDispatcher("views/signup.jsp");
-            request.setAttribute("process","fail");
-            request.setAttribute("getOrPost","post");
-            rd.forward(request,response);
+            request.setAttribute("process", "fail");
+            request.setAttribute("getOrPost", "post");
+            rd.forward(request, response);
         }
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         RequestDispatcher rd = request.getRequestDispatcher("views/signup.jsp");
-        request.setAttribute("getOrPost","get");
+        request.setAttribute("getOrPost", "get");
         rd.forward(request, response);
     }
 }

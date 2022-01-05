@@ -44,6 +44,9 @@
                             <li>
                                 <div class="thumb-content"><a href="/symptomchecker">Symptoms Checker</a></div>
                             </li>
+                            <li>
+                                <div class="thumb-content"><a href="/riskchecker">Risk Checker</a></div>
+                            </li>
                         </ul>
                     </div>
                 </div>

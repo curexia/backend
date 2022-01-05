@@ -11,10 +11,13 @@
     <title></title>
 </head>
 <body>
-<div class="d-flex justify-content-evenly p-3 mb-2 bg-info text-white" >
-    <div class="d-flex align-items-stretch"><a class="nav-link" style="text-decoration: none;color:#ffffff;" href="/user/profile">Profile</a></div>
-    <div class="d-flex align-items-stretch"><a class="nav-link" style="text-decoration: none;color:#ffffff;" href="/user/notification">Requests</a></div>
-    <div class="d-flex align-items-stretch"><a class="nav-link" style="text-decoration: none;color:#ffffff;" href="/user/search">Search Dr.</a></div>
+<div class="d-flex justify-content-evenly p-3 mb-2 bg-info text-white">
+    <div class="d-flex align-items-stretch"><a class="nav-link" style="text-decoration: none;color:#ffffff;"
+                                               href="/user/profile">Profile</a></div>
+    <div class="d-flex align-items-stretch"><a class="nav-link" style="text-decoration: none;color:#ffffff;"
+                                               href="/user/notification">Requests</a></div>
+    <div class="d-flex align-items-stretch"><a class="nav-link" style="text-decoration: none;color:#ffffff;"
+                                               href="/user/search">Search Dr.</a></div>
 </div><!--Main body starts here-->
 </body>
 </html>

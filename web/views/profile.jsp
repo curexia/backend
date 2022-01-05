@@ -14,7 +14,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Gilda+Display&display=swap" rel="stylesheet">
     <link href="../css/style.css" rel="stylesheet">
-
     <style>
         .navbar-brand img {
             width: 75px;
@@ -25,6 +24,7 @@
         }
     </style>
     <title>Profile | Curexia</title>
+    <jsp:include page="../stills/head.jsp"/>
 </head>
 
 <body>
@@ -36,58 +36,71 @@
         Person current = (Person) session.getAttribute("current");
         ArrayList<Disease> diseases = (ArrayList<Disease>) session.getAttribute("diseases");
     %>
-    <h2><%=current.getName()%></h2>
-    <p><%=current.getDesignation()%></p>
-    <p><%=current.getAddress()%></p>
-    <br />
+    <h2><%=current.getName()%>
+    </h2>
+    <p><%=current.getDesignation()%>
+    </p>
+    <p><%=current.getAddress()%>
+    </p>
+    <br/>
     <h3>Diseases</h3>
     <ul>
-    <%
-        if(diseases.size()==0){
-            %>
-                <p>No record found!</p>
-            <%
-        }
-        for (int i = 0; i < diseases.size(); i++) {
-            Disease d = diseases.get(i);
-            if (d.getCategory().equalsIgnoreCase("Disease")) {
-                %>
-                    <li>
-                        <h5><%=d.getName()%></h5>
-                        <p><%=d.getDescription()%></p>
-                        <p><b>Symptoms</b> : <%=d.getSymptoms()%></p>
-                        <p><b>Precaution</b> : <%=d.getPrecaution()%></p>
-                        <p><b>Remedies</b> : <%=d.getRemedies()%></p>
-                    </li>
-    <%
+        <%
+            if (diseases.size() == 0) {
+        %>
+        <p>No record found!</p>
+        <%
             }
-        }
-    %>
+            for (int i = 0; i < diseases.size(); i++) {
+                Disease d = diseases.get(i);
+                if (d.getCategory().equalsIgnoreCase("Disease")) {
+        %>
+        <li>
+            <h5><%=d.getName()%>
+            </h5>
+            <p><%=d.getDescription()%>
+            </p>
+            <p><b>Symptoms</b> : <%=d.getSymptoms()%>
+            </p>
+            <p><b>Precaution</b> : <%=d.getPrecaution()%>
+            </p>
+            <p><b>Remedies</b> : <%=d.getRemedies()%>
+            </p>
+        </li>
+        <%
+                }
+            }
+        %>
     </ul>
-    <br />
+    <br/>
     <h3>Allergies</h3>
     <ul>
-    <%
-        if(diseases.size()==0){
-            %>
-                <p>No record found!</p>
-            <%
-        }
-        for (int i = 0; i < diseases.size(); i++) {
-            Disease d = diseases.get(i);
-            if (d.getCategory().equalsIgnoreCase("Allergy")) {
-                %>
-                    <li>
-                        <h5><%=d.getName()%></h5>
-                        <p><%=d.getDescription()%></p>
-                        <p><b>Symptoms</b> : <%=d.getSymptoms()%></p>
-                        <p><b>Precaution</b> : <%=d.getPrecaution()%></p>
-                        <p><b>Remedies</b> : <%=d.getRemedies()%></p>
-                    </li>
-                <%
+        <%
+            if (diseases.size() == 0) {
+        %>
+        <p>No record found!</p>
+        <%
             }
-        }
-    %>
+            for (int i = 0; i < diseases.size(); i++) {
+                Disease d = diseases.get(i);
+                if (d.getCategory().equalsIgnoreCase("Allergy")) {
+        %>
+        <li>
+            <h5><%=d.getName()%>
+            </h5>
+            <p><%=d.getDescription()%>
+            </p>
+            <p><b>Symptoms</b> : <%=d.getSymptoms()%>
+            </p>
+            <p><b>Precaution</b> : <%=d.getPrecaution()%>
+            </p>
+            <p><b>Remedies</b> : <%=d.getRemedies()%>
+            </p>
+        </li>
+        <%
+                }
+            }
+        %>
     </ul>
 </div>
 <!-- Main body ends here -->

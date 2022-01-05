@@ -19,21 +19,21 @@ public class LoginServlet extends HttpServlet {
 
         HttpSession session = request.getSession();
 
-        if(UserDAO.checkLogin(email,password)){
+        if (UserDAO.checkLogin(email, password)) {
             int id = UserDAO.getID(email);
-            session.setAttribute("id",id);
+            session.setAttribute("id", id);
             response.sendRedirect("/user/profile");
-        }else{
+        } else {
             RequestDispatcher rd = request.getRequestDispatcher("views/login.jsp");
-            request.setAttribute("process","fail");
-            request.setAttribute("getOrPost","post");
-            rd.forward(request,response);
+            request.setAttribute("process", "fail");
+            request.setAttribute("getOrPost", "post");
+            rd.forward(request, response);
         }
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         RequestDispatcher rd = request.getRequestDispatcher("views/login.jsp");
-        request.setAttribute("getOrPost","get");
+        request.setAttribute("getOrPost", "get");
         rd.forward(request, response);
     }
 }
