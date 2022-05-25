@@ -22,7 +22,7 @@
         }
     </style>
     <title>Symptoms Checker | Curexia</title>
-    <jsp:include page="../stills/head.jsp"/>
+<%--    <jsp:include page="../stills/head.jsp"/>--%>
 </head>
 
 <body>

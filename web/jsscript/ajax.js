@@ -13,9 +13,9 @@ function ajaxreq() {
                 table.append("" +
                     "<br />" +
                     "<div class='container2'>" +
-                    "<div>" +
-                    "<img src='" + result["result"][i]["image"] + "' class='iconDetails'> " +
-                    "</div>" +
+                    // "<div>" +
+                    // "<img src='" + result["result"][i]["image"] + "' class='iconDetails'> " +
+                    // "</div>" +
                     "<div style='margin-left:60px;'> " +
                     "<h4><a href='/medicine/info?code=" + result["result"][i]["code"] + "'>" + result["result"][i]["name"] + "</a></h4> " +
                     "<div style='font-size:.6em'>" + result["result"][i]["desc"] + "</div> " +
@@ -44,22 +44,27 @@ function diseaseInfo() {
         timeout: 600000,
         success: function (result) {
             var p = $("<br /><h2 style=\"color:rgb(107, 250, 250);\">" + result["result"]["name"] + "</h2><br/>");
-            Object.keys(result["result"]["details"]).forEach(function (key) {
-                if (key.localeCompare("Definition") === 0) {
+            Object.keys(result["result"]).forEach(function (key) {
+                if (key.localeCompare("definition") === 0  ||
+                    key.localeCompare("overview") === 0 ||
+                    key.localeCompare("summary") === 0 ) {
                     p.append("" +
                         "<br/>" +
                         "<div class='container2'>" +
-                        "<div style='white-space: pre-line;font-size: .6em'>" + result["result"]["details"][key] + "</div>" +
+                        "<div style='white-space: pre-line;font-size: .6em'>" + result["result"][key] + "</div>" +
                         "</div>");
                 }
             })
-            Object.keys(result["result"]["details"]).forEach(function (key) {
-                if (key.localeCompare("Definition") === 0) {
-                } else {
+            Object.keys(result["result"]).forEach(function (key) {
+                if (key.localeCompare("definition") === 0  ||
+                    key.localeCompare("overview") === 0 ||
+                    key.localeCompare("summary") === 0 ||
+                    key.localeCompare("name") === 0) {
+                } else if (result["result"][key].length > 0){
                     p.append("" +
                         "<div class='container2'>" +
-                        "<div> <h4 style=\"color:rgb(107, 250, 250);\">" + key + "</h4></div>" +
-                        "<div style='white-space: pre-line;font-size: .6em'>" + result["result"]["details"][key] + "</div>" +
+                        "<div> <h4 style=\"color:rgb(107, 250, 250);\">" + key.toUpperCase() + "</h4></div>" +
+                        "<div style='white-space: pre-line;font-size: .6em; color: white;'>" + result["result"][key] + "</div>" +
                         "</div>");
                 }
             })
